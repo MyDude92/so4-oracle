@@ -1,0 +1,40 @@
+# ── Rust build artifacts ──────────────────────────────────────────────────────
+target/
+oracle/build/
+/target_local
+oracle/target_local
+
+# ── Secrets / local environment — NEVER send to docker daemon ─────────────────
+.env
+.env.*
+!.env.example
+.dev.vars
+*.dev.vars
+oracle_vars.md
+
+# ── Version control metadata ──────────────────────────────────────────────────
+.git/
+.gitignore
+
+# ── Frontend dependencies & build output ──────────────────────────────────────
+node_modules/
+dist/
+.next/
+out/
+.wrangler/
+
+# ── OS / editor clutter ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Scratch & documentation files not needed for container build ─────────────
+temp_docs.md
+ISSUES.md
+scripts/.deploy-testnet-state
+fix.md
+plan.md
+docs/
