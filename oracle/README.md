@@ -37,6 +37,9 @@ Optional defaults:
 - `KEEPER_LOOP_MS=1500`
 - `KEEPER_INDEX=0`
 - `MIN_KEEPER_BALANCE_XLM=10`
+- `SET_PRICES_TX_FEE=100000000` — maximum Soroban resource fee (in stroops) willing to pay for `set_prices` contract calls (defaults to 10 XLM)
+- `KEEPER_TX_FEE=100000000` — maximum Soroban resource fee (in stroops) willing to pay for keeper order execution calls (defaults to 10 XLM)
+- `PYTH_API_KEY` — optional Hermes/Pyth credentials when querying rate-limited or private Pyth price feed endpoints
 - `PRICE_FEED_CONFIG`, otherwise `config/tokens.json` is embedded
 
 For mainnet, `STELLAR_RPC_URL` and `ORACLE_CONTRACT_ID` must be explicit.
