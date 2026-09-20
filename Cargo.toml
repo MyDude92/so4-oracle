@@ -3,7 +3,13 @@ members = ["oracle", "shared/config"]
 resolver = "2"
 
 [workspace.package]
+version = "0.1.0"
+edition = "2021"
 rust-version = "1.95"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/SO4-Markets/so4-oracle"
+authors = ["SO4 Markets Contributors"]
+description = "High-throughput Soroban decentralized oracle runtime and keeper daemon"
 
 [workspace.lints.rust]
 # Allow during the Rust 2024 migration while dependencies and generated code settle on one lifetime spelling.
@@ -16,4 +22,3 @@ mismatched_lifetime_syntaxes = "allow"
 [profile.release]
 overflow-checks = true
 panic = "abort"
-
