@@ -33,8 +33,10 @@ Optional defaults:
 - `STELLAR_NETWORK=testnet`
 - `STELLAR_RPC_URL=https://soroban-testnet.stellar.org` on testnet
 - `HORIZON_URL=https://horizon-testnet.stellar.org` on testnet
-- `PRICE_LOOP_MS=1000`
-- `KEEPER_LOOP_MS=1500`
+- `PRICE_LOOP_MS=1000` — polling interval for Pyth/CEX price fetching in milliseconds
+- `KEEPER_LOOP_MS=1500` — polling interval for order, deposit, and withdrawal execution cycles in milliseconds
+- `MAX_CONFIDENCE_BPS=50` — maximum allowable Pyth price confidence interval width in basis points (1 bps = 0.01%)
+- `STALE_AFTER_SECONDS=60` — threshold in seconds after which a cached price is considered stale and rejected
 - `KEEPER_INDEX=0`
 - `MIN_KEEPER_BALANCE_XLM=10`
 - `PRICE_FEED_CONFIG`, otherwise `config/tokens.json` is embedded
