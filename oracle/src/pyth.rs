@@ -862,3 +862,14 @@ mod tests {
         );
     }
 }
+
+/// Validates that a Pyth price feed ID is a valid 64-character hex string (with optional 0x prefix).
+pub fn validate_pyth_feed_id(feed_id: &str) -> Result<&str, PythPriceError> {
+    let clean = feed_id.strip_prefix("0x").unwrap_or(feed_id);
+    if clean.len() != 64 || !clean.chars().all(|c| c.is_ascii_hexdigit()) {
+        return Err(PythPriceError::PriceParseError(format!(
+            "invalid pyth feed id '{feed_id}': must be 64-character hex string"
+        )));
+    }
+    Ok(feed_id)
+}
