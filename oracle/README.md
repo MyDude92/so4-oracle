@@ -53,3 +53,20 @@ Expected health response:
 ```json
 {"status":"ok"}
 ```
+
+
+## Local Soroban Sandbox Verification
+
+To smoke-test the oracle binary against a local Soroban standalone node before deploying to testnet:
+
+```sh
+# 1. Start local Soroban standalone container
+docker run --rm -it -p 8000:8000 stellar/quickstart --standalone --enable-soroban-rpc
+
+# 2. Export local sandbox endpoint
+export STELLAR_RPC_URL="http://127.0.0.1:8000/soroban/rpc"
+export STELLAR_NETWORK="standalone"
+
+# 3. Run oracle binary
+cargo run --bin oracle
+```
